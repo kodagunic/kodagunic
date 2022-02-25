@@ -1,7 +1,7 @@
 <?php
     include "inc/header1.php";
     include "inc/nav1.php";
-    //include "district/getdistrict.php";    
+    include "district/getdistrict.php";    
 ?>
 
     <div class="container form-group">
