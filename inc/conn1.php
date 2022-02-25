@@ -1,6 +1,6 @@
 <?php
-    Class dbObj{
-        /* Database connection start */
+    Class dbObj{ 
+        /* Database tt connection start */
         var $servername = "localhost";
         var $username = "postgres";
         var $password = "root";
