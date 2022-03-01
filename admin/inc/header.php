@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-	define("SITEPATH1", 'http://localhost:81/nictemp/');
+	define("SITEPATH1", 'https://localhost/nictemp/');
 ?>    
 <head>
 	<title>KODAGU VA Recruitment</title>

@@ -7,11 +7,13 @@
     if(isset($_POST['testsubmit']))
     {
         $ret_val = $obj->insTest();
+        //$GLOBALS['ref'] = $GLOBALS['data'];
         if($ret_val==1)
         {
+            //$ref = $_POST['refid'];
             echo '<script type="text/javascript">'; 
-            echo 'alert("Record Saved Successfully with reference no");';
-            echo 'window.location.href = "test.php";';
+            echo 'alert("Record Saved Successfully with reference no:");';
+            echo 'window.location.href = "try.php";';
             echo '</script>';
         }
     }   

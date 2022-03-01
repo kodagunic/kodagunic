@@ -30,7 +30,7 @@
                                 ನೇಮಕಾತಿ ಬಯಸುವ ಜಿಲ್ಲೆಯ ಹೆಸರು *
                             </td>
                             <td>
-                                <div class="dropdown">
+                                <div class="form-group">
                                     <select>
                                         <option value="541">ಕೊಡಗು/KODAGU</option>
                                     </select>

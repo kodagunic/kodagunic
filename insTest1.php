@@ -32,9 +32,14 @@
                         $id_increase = $get_numbers + 1;
                         $get_string = str_pad($id_increase,6,0,STR_PAD_LEFT);
                         $id = "KDGVA".$get_string;
-                        $insert_test_qry = "insert into public.test(refid,name,mobile,email,district_code) values ('$id','$name','$mobile','$email','$district')";
+                        $insert_test_qry = 
+                            "insert into public.test(refid,name,mobile,email,district_code) 
+                             values ('$id','$name','$mobile','$email','$district')
+                             returning refid";
                         $result = pg_query($this->conn,$insert_test_qry);
-                        return pg_affected_rows($result);
+                        //$data = pg_fetch_array($result);
+                        return pg_affected_rows($result);                        
+                        //return $data;
                         //if($result){ echo "entry added".'<br>'."Reference ID:".$id;}
                         //else{echo "error";}
                     }
@@ -44,7 +49,9 @@
                     $id = "KDGVA000001";
                     $insert_test_qry = "insert into public.test(refid,name,mobile,email,district_code) values ('$id','$name','$mobile','$email','$district')";
                     $result = pg_query($this->conn,$insert_test_qry);
-                    return pg_affected_rows($result);
+                    //$data = pg_fetch_all($result);
+                    return pg_affected_rows($result);                        
+                    //return $data;
                     //if($result){ echo "entry added".'<br>'."Reference ID:".$id;}
                     //else{echo "error";}                
                 }

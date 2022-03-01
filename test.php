@@ -50,7 +50,7 @@
                 <!--
                 <div class="form-group my-3">
                     Captcha Code: <span id="error-captcha" class="demo-error">
-                                    <?php if(isset($error_message)) { echo $error_message; } ?>
+                                    <?php //if(isset($error_message)) { echo $error_message; } ?>
                                 </span>
                     <input name="captcha_code" type="text" class="demo-input captcha-input">
                 </div>

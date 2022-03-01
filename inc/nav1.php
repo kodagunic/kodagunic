@@ -15,13 +15,13 @@
 				
 				<div class="collapse navbar-collapse" id="collapsibleNavbar">
 					<ul class="navbar-nav main-menu d-flex">
-						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>index.php" class="nav-link active">Home</a> </li>
-						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>application.php" class="nav-link">Apply</a></li>
+						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>index" class="nav-link active">Home</a> </li>
+						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>application" class="nav-link">Apply</a></li>
 						<li class="nav-item d-block"> <a href="http://10.171.153.2/va/HelpMain.aspx" class="nav-link" target="_blank">Information Booklet</a></li> 
-						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>dupack.php" class="nav-link">Duplicate Acknowledgement</a> </li>
-						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>challanupload.php" class="nav-link">Upload Payment Challan </a></li>
-						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>applstat.php" class="nav-link">Application Status </a></li>
-						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>help.php" class="nav-link">Help</a></li>      
+						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>dupack" class="nav-link">Duplicate Acknowledgement</a> </li>
+						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>challanupload" class="nav-link">Upload Payment Challan </a></li>
+						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>applstat" class="nav-link">Application Status </a></li>
+						<li class="nav-item d-block"> <a href="<?php echo SITEPATH; ?>help" class="nav-link">Help</a></li>      
 					</ul>
 				</div>
 
