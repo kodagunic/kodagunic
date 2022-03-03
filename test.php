@@ -5,12 +5,18 @@
 ?>
 
     <div class="container form-group">
-        <form action="testpreview.php" name="testform" method="post">
+        <form action="testpreview1.php" name="testform" method="post">
         
             <div class="form-group">
                 <label for="testname" class="form-label">Name:</label>
                 <div class="input-group">
                     <input type="text" name="testname"  class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="testimg" class="form-label">Photo:</label>
+                <div class="input-group">
+                    <input type="file" name="testimg"  class="form-control" required>
                 </div>
             </div>
             <div class="form-group my-3">
@@ -33,7 +39,7 @@
             </div>
             <div class="form-group my-3">
                 <label for="testdistrictddl">Select District:</label>
-                <div class="input-group">
+                <div class="form-group">
                     <select name="testdistrictddl">
                         <option value="0" selected="" disabled="">Select District</option>
                         <?php 

@@ -24,8 +24,9 @@
                     $uid = $row['refid'];
                     $get_numbers = str_replace("KDGVA","",$uid);
                     $id_increase = $get_numbers + 1;
-                    $get_string = str_pad($id_increase,6,0,STR_PAD_LEFT);
-                    $id = "KDGVA".$get_string;
+                    //$get_string = str_pad($id_increase,6,0,STR_PAD_LEFT);
+                    //$id = "KDGVA".$get_string;
+                    $id = "KDGVA".$id_increase;
                     $insert_test_qry = "insert into public.test(refid,name,mobile,email,district_code)
                     values ('$id','$name','$mobile','$email','$district')";
                     $select_test_qry = "select * from public.test where refid = '$id'";
@@ -38,7 +39,7 @@
             }
             
             else{
-                $id = "KDGVA000001";
+                $id = "KDGVA2022000001";
                 $insert_test_qry = "insert into public.test(refid,name,mobile,email,district_code) 
                 values ('$id','$name','$mobile','$email','$district')";
                 $select_test_qry = "select * from public.test where refid = '$id'";

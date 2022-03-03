@@ -7,7 +7,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   //header('location: ../admin.php');
     echo ("<script LANGUAGE='JavaScript'>
     window.alert('You are required to Login to access');
-    window.location.href='http://localhost:81/nictemp/admin.php';
+    window.location.href='https://localhost/nictemp/admin.php';
     </script>");
     exit();
   
