@@ -1,7 +1,8 @@
 <?php
     include "inc/header1.php";
     include "inc/nav1.php";
-    include "district/getdistrict.php";    
+    include "inc/conn.php";
+    //include "district/getdistrict.php";    
 ?>
 
     <div class="container form-group">
@@ -35,32 +36,27 @@
                         <span class="input-group-text"> <span class="fa fa-envelope" aria-hidden="true"></span> </span>
                     </div>
                     <input type="text" class="form-control" id="testemail" placeholder="Enter email" name="testemail" required>
+                    
+                                <span id="emailerrmsg"></span>
+
                 </div>
             </div>
             <div class="form-group my-3">
                 <label for="testdistrictddl">Select District:</label>
                 <div class="form-group">
-                    <select name="testdistrictddl">
+                    <select name="testdistrictddl" class="form-control">
                         <option value="0" selected="" disabled="">Select District</option>
                         <?php 
-                            $newObj = new District();
-                            $dists = $newObj->getDistricts();
-                            foreach($dists as $key => $dist) :
+                            $seldist = "select district_code,district_name_eng,district_name_kan from district_karnataka";
+                            $sd = pg_query($db1,$seldist);
+                            while($row=pg_fetch_assoc($sd)){
                         ?>
-                        <option value="<?php echo $dist['district_code'] ?>">
-                            <?php echo $dist['district_name_eng'] ?> / <?php echo $dist['district_name_kan'] ?>
+                        <option value="<?php echo $row['district_code'] ?>">
+                            <?php echo $row['district_name_eng'] ?> / <?php echo $row['district_name_kan'] ?>
                         </option>
-                        <?php endforeach;?>
+                        <?php } ?>
                     </select>
                 </div>
-                <!--
-                <div class="form-group my-3">
-                    Captcha Code: <span id="error-captcha" class="demo-error">
-                                    <?php //if(isset($error_message)) { echo $error_message; } ?>
-                                </span>
-                    <input name="captcha_code" type="text" class="demo-input captcha-input">
-                </div>
-                            -->
             </div>
             <button type="submit" class="btn btn-primary">PREVIEW</button>
             <button type="reset" class="btn btn-danger">CANCEL</button>

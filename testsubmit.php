@@ -22,6 +22,13 @@
                     $get_numbers = str_replace("KDGVA","",$uid);
                     $id_increase = $get_numbers + 1;
                     $id = "KDGVA".$id_increase;
+                    $checkemail = "select * from test where email = '$email'";
+                    $checkemailresult = pg_query($db1,$checkemail);
+                    $numr = pg_num_rows($checkemailresult);
+                    if($numr>0){
+                        echo $email." already in DB";
+                    } 
+                    else {
                     $insert_test_qry = "insert into test(refid,name,mobile,email,district_code) values ('$id','$name','$mobile','$email','$district')";
                     if($result = pg_query($db1,$insert_test_qry)){
                         echo "Data Inserted Successfully";
@@ -61,7 +68,7 @@
                     <?php
                     }}
                     else{echo "error";}
-                }
+                }}
             }
 
             else{

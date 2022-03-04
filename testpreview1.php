@@ -44,18 +44,45 @@ include "inc/nav1.php";
                         <input type="hidden" name="testdistrictddl" value="<?php echo $_POST['testdistrictddl']; ?>">
                     </td>
                 </tr>
+                <tr>
+                    <td colspan='2'>
+                        <input type="text" name="captcha" id="captcha" placeholder="Captcha" class="form-control" required>
+                        <p><br />
+                            <img src="captcha.php?rand=<?php echo rand(); ?>" id='captcha_image'>
+                        </p>
+                        <p>
+                            <a href='javascript: refreshCaptcha();'>Refresh</a>
+                        </p>
+                    </td>
+                </tr>
             </table>
 
         </div>
         <div align="center">
             <a href="test.php" class="btn btn-danger">
                 <-- BACK to TEST FORM</a>
-                    <button type="submit" class="btn btn-primary" name="testsubmit">SUBMIT</button>
+                    <button type="submit" class="btn btn-success" name="testsubmit">SUBMIT</button>
         </div>
     </form>
 </div>
 
-<?php
-include "inc/footer.php";
-include "inc/script1.php";
-?>
+
+<?php include "inc/footer.php"; ?>
+<script>
+//Refresh Captcha
+function validateForm() {
+  let x = document.forms["form"]["captcha"].value;
+  if (x == "") {
+    alert("Please enter captcha..!");
+    return false;
+  }
+}
+
+function refreshCaptcha(){
+    var img = document.images['captcha_image'];
+    img.src = img.src.substring(
+		0,img.src.lastIndexOf("?")
+		)+"?rand="+Math.random()*1000;
+}
+</script>
+<?php include "inc/script1.php"; ?>
