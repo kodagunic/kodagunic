@@ -45,7 +45,7 @@
                 <label for="testdistrictddl">Select District:</label>
                 <div class="form-group">
                     <select name="testdistrictddl" class="form-control">
-                        <option value="0" selected="" disabled="">Select District</option>
+                        <option value="0" selected="" disabled="">Select District / ಜಿಲ್ಲೆ ಆಯ್ಕೆಮಾಡಿ </option>
                         <?php 
                             $seldist = "select district_code,district_name_eng,district_name_kan from district_karnataka";
                             $sd = pg_query($db1,$seldist);

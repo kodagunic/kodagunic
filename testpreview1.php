@@ -1,7 +1,21 @@
 <?php
+    if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {        
+        header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+        die( header( 'location: test.php' ) );
+    }
+?>
+<?php
 include "inc/header1.php";
 include "inc/nav1.php";
+include "inc/conn.php";
 ?>
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()",0);
+    window.onunload = function () {null};
+</script>
 
 <div class="container form-group">
     <form method="post" action="testsubmit.php">
@@ -38,11 +52,18 @@ include "inc/nav1.php";
                     </td>
                 </tr>
                 <tr>
+                    <?php
+                        $dc = $_POST['testdistrictddl'];
+                        $sel = "select district_name_eng,district_name_kan from district_karnataka where district_code ='$dc'";
+                        $sd1 = pg_query($db1,$sel);
+                        while($row=pg_fetch_assoc($sd1)){ 
+                    ?>
                     <td width="10%">District:</td>
                     <td>
-                        <?php echo $_POST['testdistrictddl']; ?>
-                        <input type="hidden" name="testdistrictddl" value="<?php echo $_POST['testdistrictddl']; ?>">
+                        <?php echo $row["district_name_eng"]; ?>/<?php echo $row["district_name_kan"]; ?>
+                        <input type="hidden" name="testdistrictddl" value="<?php echo $dc; ?>">
                     </td>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <td colspan='2'>
